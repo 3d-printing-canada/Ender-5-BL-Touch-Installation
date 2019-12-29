@@ -1,11 +1,26 @@
 # Ender-5-BL-Touch-Installation
-Installation Instructions for the Creality Ender 5 BL Touch Video
+Instructions and Firmware For The Ender 5 BL Touch Installation
+
+
+## Suitability:
+- Warning: This firmware is for the Ender 5 and is not compatable with the larger Ender 5 Plus.
+- Creality v1.1.4 Control Board.
+- Creality v1.1.5 Silent Control Board.
+
+
+## General Notes
+
+- For V3.0 BL touches, the C7 capacitor must be removed from the motherboard. Please view the "Ender-3 C7 Capacitor" picture uploaded above. The capacitor in question is circled - the yellow one closest to the Z endstop plug. It is labelled "C7" on the board. It is easy to remove - use a pair of pliers and grip the capacitor, then twist gently. It will break off with no damage. 
+- When you complete your installation and are ready to test for the first time, try homing the printer and touching the BL touch in mid-air. This will ensure that your connections are working if doing so stops the Z axis from going down. The BL touch should retract, and the gantry should go up and then try to go down again. 
+
+## Errors
+
+- If you get a "U8Glib" Library not found error, go to Sketch > Include Library > Manage Libraries and search for "U8Glib". Download V1.17
+- Sometimes if you try to upload it will error out. With Arduino, sometimes the fix for this is trying the upload 2-3 more times.
 
 ## Flashing The Bootloader 
 
-Follow the directions in our Ender 3 BL touch video for connecting the Arduino Uno to the Ender 5 motherboard. The motherboards are the same model, so flashing the bootloader will follow the same process. https://youtu.be/dRgWrepDUBE?t=515
-
-Once your arduino is connected to the Ender 5 motherboard using the dupont connectors, please follow these steps to flash the bootloader with the Arduino Uno: 
+Please follow these steps to flash the bootloader of the Arduino Uno: 
 
 ### Configuring the Arduino 
 1) Download and install the Arduino IDE from: https://www.arduino.cc/en/Main/Software
@@ -28,7 +43,7 @@ Now that we have configured the Arduino Uno with the proper software, we are goi
 
 Marlin is the software that runs our 3D Printer. Luckily, we have provided a pre-compiled version for you so you don't have to mess with the code - just upload! 
 
-1) Plug your Ender-5 into your USB port.
+1) Plug your Ender-3 into your USB port.
 2) Download Marlin from here by selecting "Clone or Download" from the top right of this page, and select "Download Zip" 
 3) Unzip Marlin to a folder on your computer. In the Marlin folder, open "Marlin.ino". This should open the file in the Arduino IDE.
 4) Configure for upload. Under Tools, select Board > Sanguino. Select Processor > Processor > ATmega1284 or ATmega1284P (16 MHz. Finally, select Programmer > AVRISP mkii. 
